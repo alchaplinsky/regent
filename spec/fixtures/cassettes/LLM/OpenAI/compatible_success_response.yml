@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.groq.com/openai/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"messages":[{"role":"user","content":"What is the capital of Japan?"}],"model":"qwen-qwq-32b","temperature":0.0,"stop":[]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 25 Mar 2025 09:16:54 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private, max-age=0, no-store, no-cache, must-revalidate
+      Vary:
+      - Origin
+      X-Groq-Region:
+      - gcp-europe-west3
+      X-Ratelimit-Limit-Requests:
+      - '1000'
+      X-Ratelimit-Limit-Tokens:
+      - '6000'
+      X-Ratelimit-Remaining-Requests:
+      - '998'
+      X-Ratelimit-Remaining-Tokens:
+      - '5988'
+      X-Ratelimit-Reset-Requests:
+      - 1m59.84s
+      X-Ratelimit-Reset-Tokens:
+      - 120ms
+      X-Request-Id:
+      - req_01jq69ea58fzjrr5amfemf2320
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=cps3k6oXesY06v9ixDB97dvH07LTeB22d08yiDXysuI-1742894214-1.0.1.1-G_NQieIxZvqWXBRzklmz5XnghKNc5IE_aWxAag4Sdlm7jH3jOR2evnsGH94SC1Y_3kINJYg5MwroDvkXvPQ4NwS837_Y9WLdT6Qa462IRjo;
+        path=/; expires=Tue, 25-Mar-25 09:46:54 GMT; domain=.groq.com; HttpOnly; Secure;
+        SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 925d4fe0cc77bb0e-ZRH
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"chatcmpl-79b84452-f7c9-4714-b559-6c4e2ec5759e","object":"chat.completion","created":1742894213,"model":"qwen-qwq-32b","choices":[{"index":0,"message":{"role":"assistant","content":"The capital of Japan is Tokyo."},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.10954180300000001,"prompt_tokens":17,"prompt_time":0.003309235,"completion_tokens":270,"completion_time":0.655944184,"total_tokens":287,"total_time":0.659253419},"system_fingerprint":"fp_27d5db8d87","x_groq":{"id":"req_01jq69ea58fzjrr5amfemf2325"}}
+
+        '
+  recorded_at: Tue, 25 Mar 2025 09:16:54 GMT
+recorded_with: VCR 6.3.1
