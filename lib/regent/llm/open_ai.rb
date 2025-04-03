@@ -7,6 +7,8 @@ module Regent
 
       depends_on "ruby-openai"
 
+      attr_reader :model
+
       def invoke(messages, **args)
         response = client.chat(parameters: {
           messages: messages,
@@ -26,7 +28,10 @@ module Regent
       private
 
       def client
-        @client ||= ::OpenAI::Client.new(access_token: api_key)
+        client_options = { access_token: api_key }
+        client_options[:uri_base] = options[:uri_base] if options[:uri_base]
+
+        @client ||= ::OpenAI::Client.new(**client_options)
       end
     end
   end

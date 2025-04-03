@@ -17,6 +17,17 @@ RSpec.describe Regent::LLM do
     end
   end
 
+  context "OpenAICompatible", vcr: true do
+    let(:model) { Regent::LLM::OpenAI.new(model: "qwen-qwq-32b", api_key: 'api_key', uri_base: 'https://api.groq.com/openai') }
+    let(:cassette) { "LLM/OpenAI/compatible_success_response" }
+
+    it "returns a model response" do
+      result = subject.invoke(messages)
+      expect(result).to be_a(Regent::LLM::Result)
+      expect(result.content).to eq("The capital of Japan is Tokyo.")
+    end
+  end
+
   context "Gemini", vcr: true do
     let(:model) { "gemini-1.5-flash" }
     let(:cassette) { "LLM/Google_Gemini/success_response" }
