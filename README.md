@@ -17,6 +17,8 @@
 > 
 > Read more about Regent in a Medium article: [Building AI Agent from scratch with Ruby](https://medium.com/towards-artificial-intelligence/building-ai-agent-from-scratch-with-ruby-c6260dad45b7)
 
+#### 📢 Check out TypeScript version https://github.com/alchaplinsky/regent-ts
+
 ## Key Features
 
 - **ReAct Pattern Implementation**: Agents follow the Reasoning-Action pattern, making decisions through a clear thought process before taking actions
