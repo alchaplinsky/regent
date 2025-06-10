@@ -34,7 +34,7 @@ module Regent
 
       provider.invoke(messages, **args)
 
-    rescue Faraday::Error, ApiError => error
+    rescue StandardError => error
       if error.respond_to?(:retryable?) && error.retryable? && retries < DEFAULT_RETRY_COUNT
         sleep(exponential_backoff(retries))
         retry
