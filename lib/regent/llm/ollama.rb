@@ -6,6 +6,8 @@ module Regent
       # Default host for Ollama API.
       DEFAULT_HOST = "http://localhost:11434"
 
+      depends_on "faraday"
+
       def initialize(model:, host: nil, **options)
         @model = model
         @host = host || DEFAULT_HOST
