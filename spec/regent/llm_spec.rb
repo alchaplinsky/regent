@@ -180,13 +180,14 @@ RSpec.describe Regent::LLM do
     before do
       allow(Regent::Logger).to receive(:warn_and_exit).and_return(true)
       allow_any_instance_of(Regent::LLM::Anthropic).to receive(:gem).with("anthropic").and_raise(Gem::LoadError)
+      allow_any_instance_of(Regent::LLM::Anthropic).to receive(:gem).with("ruby-anthropic").and_raise(Gem::LoadError)
     end
 
     it "warns and exists if the dependency is not installed" do
       subject
 
       expect(Regent::Logger).to have_received(:warn_and_exit).with(
-         /\n.*In order to use .*claude-3-5-sonnet-20240620.* model you need to install .*anthropic.* gem. Please add .*gem "anthropic".* to your Gemfile.*/
+         /\n.*In order to use .*claude-3-5-sonnet-20240620.* model you need to install one of: .*ruby-anthropic, anthropic.*. Please add .*gem "ruby-anthropic".* or .*gem "anthropic".* to your Gemfile.*/
       )
     end
   end
