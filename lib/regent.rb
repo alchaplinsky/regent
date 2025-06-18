@@ -2,7 +2,6 @@
 
 require 'securerandom'
 require 'json'
-require 'faraday'
 require 'pastel'
 require 'tty-spinner'
 require 'zeitwerk'
