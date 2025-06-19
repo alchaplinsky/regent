@@ -6,7 +6,7 @@ module Regent
       MAX_TOKENS = 1000
       ENV_KEY = "ANTHROPIC_API_KEY"
 
-      depends_on "anthropic"
+      depends_on "ruby-anthropic", "anthropic"
 
       def invoke(messages, **args)
         parameters = {

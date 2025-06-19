@@ -104,6 +104,9 @@ model = Regent::LLM.new("gemini-1.5-flash", api_key: "AIza...")
 > [!NOTE]
 > Currently **Regent** supports only `gpt-`, `gemini-` and `claude-` models series and local **ollama** models. But you can build, your custom model classes that conform to the Regent's interface and pass those instances to the Agent.
 
+> [!NOTE]
+> For Claude, Regent uses https://github.com/alexrudall/ruby-anthropic. It will try and load a gem with name `ruby-anthropic`, and fall back to a gem named `anthropic`.
+
 #### Calling LLM
 Once your model is instantiated you can call the `invoke` method:
 
